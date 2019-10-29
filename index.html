@@ -1,0 +1,192 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One|Open+Sans&display=swap" rel="stylesheet">
+    <link href="nouislider.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        body {
+            background: #0A0523 url(https://stardewvalleywiki.com/mediawiki/skins/Vector/stardewimages/stardewbackground.png) no-repeat fixed center center / cover;
+            font-family: 'Lilita One', cursive;
+            text-shadow: 1px 1px 3px #0000006e;
+        }
+
+        .difficulty {
+            color: wheat;
+            text-align: right;
+        }
+
+        .result {
+            background: rgba(209, 248, 255, 0.67);
+            border-radius:15px;
+        }
+        
+        .btn-primary {
+            background-color: #14a25d;
+        }
+        .btn-primary:hover {
+            background-color: #1fcb32;
+        }
+        .noUi-base {
+            background: #c1eafb;
+        }
+        .noUi-handle {
+            border: 1px solid #413014;
+            border-radius: 33%;
+            background: #4cc3f2;
+            cursor: default;
+            box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #237eee, 0 3px 6px -3px #413014;
+        }
+
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+
+        .map-section {
+            height: 160px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-section .item {
+            font-size: 18px;
+            width: 100%;
+        }
+
+        .section-background {
+            position: absolute;
+            /* top:0;
+            left:0; */
+            height: 160px;
+            width: 294px;
+            opacity: 0.35;
+            border-radius: 15px;
+        }
+
+        .section-title {
+            z-index: 2;
+            width: 100%;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 33px;
+            color: white;
+            justify-content: center;
+        }
+
+        .item {
+            width: 85px;
+            height: 120px;
+            padding: 5px;
+            color: white;
+            text-align: center;
+            /* white-space: nowrap; */
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            position: relative;
+            font-family: 'Open Sans', sans-serif;
+            text-shadow: 1px 1px #0000006e;
+            font-weight: bold;
+            line-height: 125%;
+        }
+
+        .item img {
+            margin-bottom: 5px;
+        }
+
+        .item .count-badge {
+            background: #ffffffd1;
+            border-radius: 50%;
+            height: 20px;
+            position: absolute;
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            top: 34px;
+            right: 17px;
+            width: 20px;
+            text-shadow: none;
+        }
+
+        .item .tier-badge {
+            background: #ffffffc9;
+            border-radius: 4px;
+            height: 18px;
+            line-height: 16px;
+            position: absolute;
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            top: 34px;
+            text-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="row pt-3 justify-content-center" id="logo">
+            <img alt="Main Logo.png" src="https://stardewvalleywiki.com/mediawiki/images/6/68/Main_Logo.png" width="300" height="auto">
+        </div>
+        <div class="row align-items-center my-3">
+            <div class="difficulty col-12 col-lg-2 offset-lg-2">
+                {{difficulty}}
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="slider-wrapper">
+                    <div id="slider"></div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <button v-on:click="generate" class="btn btn-primary">Generate</button>
+            </div>
+        </div>
+        <div class="row result py-3 mb-3" v-if="genResult != null">
+            <div class="section map-section col-12 col-lg-4 offset-lg-4">
+                <div class="section-background" v-bind:style="{ background : 'url('+genResult['maps'].bgurl+') no-repeat center center / cover' }"></div>
+                <div class="section-title">{{copy['section-title']['maps']}}</div>
+                <div class="item">
+                    <img v-bind:src="genResult['maps'].imgurl" width="40" height="auto">
+                    <span>{{genResult['maps'].name}}</span>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="section col-12 col-lg-3" v-for="section in sections">
+                <div class="section-title">{{copy['section-title'][section]}}</div>
+                <template v-if="['crop','forage','fish'].includes(section)">
+                    <div class="item" v-for="item in genResult[section]">
+                        <img v-bind:src="item.imgurl" width="auto" height="40">
+                        <span>{{item.name}}</span>
+                    </div>
+                </template>
+                <template v-if="section === 'artisan'">
+                    <div class="item" v-for="item in genResult[section]">
+                        <img v-bind:src="item.imgurl" width="40" height="auto">
+                        <span>{{item.name}}</span>
+                    </div>
+                </template>
+                <template v-if="section === 'animal'">
+                    <div class="item" v-for="item in genResult[section]">
+                        <img v-bind:src="item.imgurl" width="auto" height="40">
+                        <span class="count-badge">{{item.count}}x</span>
+                        <span>{{item.name}}</span>
+                    </div>
+                </template>
+                <template v-if="section === 'tool'">
+                    <div class="item" v-for="item in genResult[section]">
+                        <img v-bind:src="item.tiers.find(tier => tier.id === item.tier).url" width="auto" height="40">
+                        <span class="tier-badge">{{item.tiers.find(tier => tier.id === item.tier).name}}</span>
+                        <span>{{item.name}}</span>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+    </div>
+    <script src="nouislider.min.js"></script>
+    <script src="index.js"></script>
+</body>
