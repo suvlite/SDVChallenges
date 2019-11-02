@@ -19,18 +19,21 @@
 
         .result {
             background: rgba(209, 248, 255, 0.67);
-            border-radius:15px;
+            border-radius: 15px;
         }
-        
+
         .btn-primary {
             background-color: #14a25d;
         }
+
         .btn-primary:hover {
             background-color: #1fcb32;
         }
+
         .noUi-base {
             background: #c1eafb;
         }
+
         .noUi-handle {
             border: 1px solid #413014;
             border-radius: 33%;
@@ -75,6 +78,16 @@
             font-size: 33px;
             color: white;
             justify-content: center;
+            position: relative;
+        }
+
+        .section-subtitle {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            line-height: initial;
+            top: 48px;
         }
 
         .item {
@@ -156,7 +169,10 @@
             </div>
             <div class="col-lg-4"></div>
             <div class="section col-12 col-lg-3" v-for="section in sections">
-                <div class="section-title">{{copy['section-title'][section]}}</div>
+                <div class="section-title">{{copy['section-title'][section]}}
+                    <div class="section-subtitle" v-if="copy['section-subtitle'][section] != null">{{copy['section-subtitle'][section]}}</div>
+                </div>
+
                 <template v-if="['crop','forage','fish'].includes(section)">
                     <div class="item" v-for="item in genResult[section]">
                         <img v-bind:src="item.imgurl" width="auto" height="40">
@@ -180,6 +196,20 @@
                     <div class="item" v-for="item in genResult[section]">
                         <img v-bind:src="item.tiers.find(tier => tier.id === item.tier).url" width="auto" height="40">
                         <span class="tier-badge">{{item.tiers.find(tier => tier.id === item.tier).name}}</span>
+                        <span>{{item.name}}</span>
+                    </div>
+                </template>
+                <template v-if="section === 'mats'">
+                    <div class="item" v-for="item in genResult[section]">
+                        <template v-if="item.alturl == null">
+                            <img v-bind:src="item.imgurl" width="auto" height="40">
+                        </template>
+                        <template v-if="item.alturl != null">
+                            <div class="d-flex" style="margin-bottom: 10px">
+                                <img v-bind:src="item.imgurl" width="30" height="30">
+                                <img v-bind:src="item.alturl" width="30" height="30">
+                            </div>
+                        </template>
                         <span>{{item.name}}</span>
                     </div>
                 </template>

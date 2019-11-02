@@ -3,23 +3,23 @@ class SdvGenerator {
     constructor(difficulty) {
         switch (difficulty) {
             case 'Easy': {
-                this.availablePoints = 250;
+                this.availablePoints = 320;
                 this.maxValue = 99;
                 break;
             }
             case 'Medium': {
-                this.availablePoints = 200;
+                this.availablePoints = 240;
                 this.maxValue = 25;
                 break;
             }
             case 'Hard': {
-                this.availablePoints = 170;
+                this.availablePoints = 180;
                 this.maxValue = 18;
                 break;
             }
             case 'Very Hard':
             default:
-                this.availablePoints = 125;
+                this.availablePoints = 120;
                 this.maxValue = 15;
         }
 
@@ -224,7 +224,7 @@ class SdvGenerator {
                 {
                     id: 'BokChoy',
                     points: 8,
-                    name: 'BokChoy',
+                    name: 'Bok Choy',
                     season: '2',
                     imgurl: 'https://stardewvalleywiki.com/mediawiki/images/4/40/Bok_Choy.png'
                 },
@@ -940,10 +940,58 @@ class SdvGenerator {
                 {
                     id: 'PomegranateTree',
                     points: 3,
-                    name: 'Pomegranate Tree',
+                    name: 'Pome. Tree',
                     season: '2',
                     imgurl: 'https://stardewvalleywiki.com/mediawiki/images/1/10/Pomegranate_Sapling.png'
                 },
+            ],
+            mats: [
+                {
+                    id: 'Wood',
+                    points: 1,
+                    name: 'Wood',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/d/df/Wood.png'
+                },
+                {
+                    id: 'HardWood',
+                    points: 3,
+                    name: 'Hardwood',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/e/ed/Hardwood.png'
+                },
+                {
+                    id: 'Stone',
+                    points: 1,
+                    name: 'Stone',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/d/d4/Stone.png'
+                },
+                {
+                    id: 'Copper',
+                    points: 2,
+                    name: 'Copper',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/7/78/Copper_Ore.png',
+                    alturl: 'https://stardewvalleywiki.com/mediawiki/images/f/f1/Copper_Bar.png'
+                },
+                {
+                    id: 'Iron',
+                    points: 3,
+                    name: 'Iron',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/87/Iron_Ore.png',
+                    alturl: 'https://stardewvalleywiki.com/mediawiki/images/6/6c/Iron_Bar.png'
+                },
+                {
+                    id: 'Gold',
+                    points: 4,
+                    name: 'Gold',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/f/f7/Gold_Ore.png',
+                    alturl: 'https://stardewvalleywiki.com/mediawiki/images/4/4e/Gold_Bar.png'
+                },
+                {
+                    id: 'Iridium',
+                    points: 5,
+                    name: 'Iridium',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/e/e9/Iridium_Ore.png',
+                    alturl: 'https://stardewvalleywiki.com/mediawiki/images/c/c4/Iridium_Bar.png'
+                }
             ]
         }
         this.result = new Set();
@@ -955,6 +1003,7 @@ class SdvGenerator {
             fish: new Set(),
             tool: new Set(),
             artisan: new Set(),
+            mats: new Set(),
             maps: new Set()
         }
     }
@@ -962,10 +1011,11 @@ class SdvGenerator {
     weights = {
         crop: 3,
         forage: 3,
-        animal: 4,
-        fish: 6,
+        animal: 3,
+        fish: 7,
         artisan: 6,
-        tool: 7
+        tool: 7,
+        mats: 6
     }
 
     cropSeasonWeight = {
@@ -1102,6 +1152,7 @@ class SdvGenerator {
             fish: [...this.sorted.fish],
             tool: [...this.sorted.tool],
             artisan: [...this.sorted.artisan],
+            mats: [...this.sorted.mats],
             maps: [...this.sorted.maps][0]
         };
     }
@@ -1135,14 +1186,16 @@ var app = new Vue({
                 'maps': 'Farm type',
                 'artisan': 'Artisan',
                 'fish': 'Fish',
-                'tool': 'Tools'
+                'tool': 'Tools',
+                'mats': 'Materials'
+            },
+            'section-subtitle': {
+                'mats': '(Buy/Sell)'
             }
         }
     },
     methods: {
         updateSlider: function(values, handle) {
-            console.log(this);
-            console.log(values);
             switch(values[0]) {
                 case '100.00': {
                     this.difficulty = 'Easy';
@@ -1163,9 +1216,9 @@ var app = new Vue({
             }
         },
         generate: function () {
-            this.genResult = 'something';
             let gen = new SdvGenerator(this.difficulty);
             this.genResult = gen.generate();
+            console.log(this.genResult);
             this.sections = Object.keys(this.genResult).filter(section => this.genResult[section].length);
         }
     }
