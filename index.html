@@ -154,6 +154,10 @@
             border-radius: 10px;
             box-sizing: content-box;
         }
+        .save-code {
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
     </style>
 </head>
 
@@ -174,6 +178,9 @@
             <div class="col-12 col-lg-4">
                 <button v-on:click="generate" class="btn btn-primary">Generate</button>
             </div>
+        </div>
+        <div class="row" v-if="saveCode != null">
+            <div class="col-12 save-code">Code: {{saveCode}}</div>
         </div>
         <div class="row result py-3 mb-3" v-if="genResult != null">
             <div class="section map-section col-12 col-lg-4 offset-lg-4">
