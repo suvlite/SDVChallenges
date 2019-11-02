@@ -992,6 +992,190 @@ class SdvGenerator {
                     imgurl: 'https://stardewvalleywiki.com/mediawiki/images/e/e9/Iridium_Ore.png',
                     alturl: 'https://stardewvalleywiki.com/mediawiki/images/c/c4/Iridium_Bar.png'
                 }
+            ],
+            npc: [
+                {
+                    id: 'Caroline',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/87/Caroline.png'
+                },
+                {
+                    id: 'Clint',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/3/31/Clint.png'
+                },
+                {
+                    id: 'Demetrius',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/f/f9/Demetrius.png'
+                },
+                {
+                    id: 'Dwarf',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/e/ed/Dwarf.png'
+                },
+                {
+                    id: 'Evelyn',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/8e/Evelyn.png'
+                },
+                {
+                    id: 'George',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/7/78/George.png'
+                },
+                {
+                    id: 'Gus',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/5/52/Gus.png'
+                },
+                {
+                    id: 'Jas',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/5/55/Jas.png'
+                },
+                {
+                    id: 'Jodi',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/4/41/Jodi.png'
+                },
+                {
+                    id: 'Kent',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/9/99/Kent.png'
+                },
+                {
+                    id: 'Krobus',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/7/71/Krobus.png'
+                },
+                {
+                    id: 'Lewis',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/2/2b/Lewis.png'
+                },
+                {
+                    id: 'Linus',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/3/31/Linus.png'
+                },
+                {
+                    id: 'Marnie',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/5/52/Marnie.png'
+                },
+                {
+                    id: 'Pam',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/d/da/Pam.png'
+                },
+                {
+                    id: 'Pierre',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/7/7e/Pierre.png'
+                },
+                {
+                    id: 'Robin',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/1/1b/Robin.png'
+                },
+                {
+                    id: 'Sandy',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/4/4e/Sandy.png'
+                },
+                {
+                    id: 'Vincent',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/f/f1/Vincent.png'
+                },
+                {
+                    id: 'Willy',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/82/Willy.png'
+                },
+                {
+                    id: 'Wizard',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/c/c7/Wizard.png'
+                },
+                {
+                    id: 'Alex',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/0/04/Alex.png'
+                },
+                {
+                    id: 'Elliott',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/b/bd/Elliott.png'
+                },
+                {
+                    id: 'Harvey',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/9/95/Harvey.png'
+                },
+                {
+                    id: 'Sam',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/9/94/Sam.png'
+                },
+                {
+                    id: 'Sebastian',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/a/a8/Sebastian.png'
+                },
+                {
+                    id: 'Shane',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/8b/Shane.png'
+                },
+                {
+                    id: 'Abigail',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/88/Abigail.png'
+                },
+                {
+                    id: 'Emily',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/2/28/Emily.png'
+                },
+                {
+                    id: 'Haley',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/1/1b/Haley.png'
+                },
+                {
+                    id: 'Leah',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/e/e6/Leah.png'
+                },
+                {
+                    id: 'Maru',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/f/f8/Maru.png'
+                },
+                {
+                    id: 'Penny',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/a/ab/Penny.png'
+                }
+            ],
+            marriage: [
+                {
+                    id: 'Alex',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/0/04/Alex.png'
+                },
+                {
+                    id: 'Elliott',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/b/bd/Elliott.png'
+                },
+                {
+                    id: 'Harvey',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/9/95/Harvey.png'
+                },
+                {
+                    id: 'Sam',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/9/94/Sam.png'
+                },
+                {
+                    id: 'Sebastian',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/a/a8/Sebastian.png'
+                },
+                {
+                    id: 'Shane',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/8b/Shane.png'
+                },
+                {
+                    id: 'Abigail',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/8/88/Abigail.png'
+                },
+                {
+                    id: 'Emily',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/2/28/Emily.png'
+                },
+                {
+                    id: 'Haley',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/1/1b/Haley.png'
+                },
+                {
+                    id: 'Leah',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/e/e6/Leah.png'
+                },
+                {
+                    id: 'Maru',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/f/f8/Maru.png'
+                },
+                {
+                    id: 'Penny',
+                    imgurl: 'https://stardewvalleywiki.com/mediawiki/images/a/ab/Penny.png'
+                }
             ]
         }
         this.result = new Set();
@@ -1004,7 +1188,9 @@ class SdvGenerator {
             tool: new Set(),
             artisan: new Set(),
             mats: new Set(),
-            maps: new Set()
+            maps: new Set(),
+            npc: new Set(),
+            marriage: new Set()
         }
     }
 
@@ -1046,6 +1232,9 @@ class SdvGenerator {
     }
 
     addSelect(object, category = null) {
+        if (object.points == null) {
+            object.points = 0;
+        }
         if (this.availablePoints < object.points || !this.satisfiesCondition(object)) {
             return false;
         }
@@ -1120,6 +1309,20 @@ class SdvGenerator {
         this.addSelect(selection, 'maps');
     }
 
+    selectNpc(count) {
+        while (count > 0) {
+            let selection = this.selectRandom(this.data.npc);
+            if (this.addSelect(selection, 'npc')) {
+                count--;
+            }
+        }
+    }
+
+    selectMarriage() {
+        let selection = this.selectRandom(this.data.marriage);
+        this.addSelect(selection, 'marriage');
+    }
+   
     generate() {
         let basicTool = this.data.tool[0];
         basicTool.tier = 0;
@@ -1129,6 +1332,8 @@ class SdvGenerator {
         basicSprinkler.condition = null;
         this.addSelect(basicSprinkler, 'tool');
         this.selectMap();
+        this.selectNpc(3);
+        this.selectMarriage();
 
         while (this.availablePoints > 5) {
             let cat = this.pickCategory();
@@ -1153,6 +1358,8 @@ class SdvGenerator {
             tool: [...this.sorted.tool],
             artisan: [...this.sorted.artisan],
             mats: [...this.sorted.mats],
+            npc: [...this.sorted.npc],
+            marriage: [...this.sorted.marriage][0],
             maps: [...this.sorted.maps][0]
         };
     }
@@ -1187,16 +1394,19 @@ var app = new Vue({
                 'artisan': 'Artisan',
                 'fish': 'Fish',
                 'tool': 'Tools',
-                'mats': 'Materials'
+                'mats': 'Materials',
+                'goals': 'Goals'
             },
             'section-subtitle': {
-                'mats': '(Buy/Sell)'
+                'tool': '(Max. Tier)',
+                'mats': '(Buy/Sell)',
+                'goals': '(end of 3rd year)'
             }
         }
     },
     methods: {
-        updateSlider: function(values, handle) {
-            switch(values[0]) {
+        updateSlider: function (values, handle) {
+            switch (values[0]) {
                 case '100.00': {
                     this.difficulty = 'Easy';
                     break;
@@ -1219,7 +1429,7 @@ var app = new Vue({
             let gen = new SdvGenerator(this.difficulty);
             this.genResult = gen.generate();
             console.log(this.genResult);
-            this.sections = Object.keys(this.genResult).filter(section => this.genResult[section].length);
+            this.sections = Object.keys(this.genResult).filter(section => this.genResult[section].length && section !== 'npc');
         }
     }
 })

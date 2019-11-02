@@ -137,6 +137,23 @@
             top: 34px;
             text-shadow: none;
         }
+
+        .heart-image {
+            height: 18px;
+            width: 22px;
+            object-fit: cover;
+            object-position: 0 0;
+            margin-bottom: 0 !important;
+        }
+
+        .heart-image.empty {
+            object-position: 100% 0;
+        }
+
+        .portrait {
+            border-radius: 10px;
+            box-sizing: content-box;
+        }
     </style>
 </head>
 
@@ -213,6 +230,21 @@
                         <span>{{item.name}}</span>
                     </div>
                 </template>
+            </div>
+            <div class="section col-12 col-lg-3">
+                <div class="section-title">{{copy['section-title']['goals']}}
+                    <div class="section-subtitle" v-if="copy['section-subtitle']['goals'] != null">{{copy['section-subtitle']['goals']}}</div>
+                </div>
+                <!-- <div class="item">
+                    <img v-bind:src="genResult['marriage'].imgurl" width="50" height="50" class="portrait">
+                    <span>Marry</span>
+                </div> -->
+                <div class="item" v-for="item in genResult['npc']">
+                    <img v-bind:src="item.imgurl" width="50" height="50" class="portrait">
+                    <span>10
+                        <img src="https://stardewvalleywiki.com/mediawiki/images/7/7c/Two_Hearts.png" alt="Heart" class="heart-image">
+                    </span>
+                </div>
             </div>
         </div>
 
